@@ -59,7 +59,6 @@
   <ItemGroup>
     <Content Include="js\angular-route.js" />
     <Content Include="js\ui-bootstrap-tpls-0.11.0.min.js" />
-    <Content Include="model\todo.json" />
     <None Include="Properties\PublishProfiles\bahbah2e - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\bahbah2e - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
@@ -75,9 +74,6 @@
     <Content Include="index.html" />
     <Content Include="js\angular.js" />
     <Content Include="js\bootstrap.min.js" />
-    <Content Include="service\dataService.js" />
-    <Content Include="svg\scoreboard.svg" />
-    <Content Include="svg\welcome.svg" />
     <Content Include="views\menu.html" />
     <Content Include="views\order.html" />
     <Content Include="views\other.html" />
@@ -91,6 +87,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
+    <Folder Include="model\" />
+    <Folder Include="service\" />
+    <Folder Include="svg\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
