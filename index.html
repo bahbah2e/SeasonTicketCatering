@@ -6,7 +6,6 @@
     <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
     <script src="js/angular.js"></script>
     <script src="js/ui-bootstrap-tpls-0.11.0.min.js"></script>
-    <script src="service/dataService.js"></script>
     <script src="js/angular-route.js"></script>
     <script>
         var model = {
@@ -24,22 +23,6 @@
                 .when('/map', { templateUrl: '/views/map.html' })
                 .when('/', { templateUrl: '/views/welcome.html' })
                 .otherwise({ redirectTo: '/views/welcome.html' });
-        });
-
-        todoApp.run(function ($http) {
-            model.items = getItems();
-        });
-
-        todoApp.filter("checkedItems", function () {
-            return function (items, showComplete) {
-                var resultArr = [];
-                angular.forEach(items, function (item) {
-                    if (item.done == false || showComplete == true) {
-                        resultArr.push(item);
-                    }
-                });
-                return resultArr;
-            }
         });
 
         todoApp.controller("ToDoCtrl", function ($scope) {
