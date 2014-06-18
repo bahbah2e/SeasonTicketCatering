@@ -16,8 +16,38 @@
     font-family: 'Segoe UI Light';
 }
 
+.menuitem h3 {
+    font-size: 30pt; 
+    margin-left: 20px; 
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-family: 'Segoe UI Light';
+}
+
 .ordering h1 {
     font-size: 78pt; 
     padding-left: 20px; 
     font-family: 'Segoe UI Light';
+}
+
+.introduction {
+    width: 30%; 
+    float: right; 
+    margin-top: 50px; 
+    border-radius: 25px;
+}
+
+.introduction h2 {
+    padding-left: 20px; 
+    padding-top: 0px; 
+    font-family: 'Segoe UI'; 
+    font-size: 20pt;
+}
+
+.introduction h4 {
+    padding-left: 30px; 
+    padding-right: 10px; 
+    padding-top: 10px; 
+    font-family: 'Segoe UI Light'; 
+    font-size: 16pt;
 }

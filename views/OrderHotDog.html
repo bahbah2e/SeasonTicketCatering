@@ -2,18 +2,18 @@
 <script src="../controller/assistance.js"></script>
 <div ng-controller="ToDoCtrl" style="margin-top: 135px; background: white">
 
-    <section style="width: 60%; background: yellow; float: left;">
+    <section style="width: 60%; float: left;">
         <div>
             <section style="width: 15%; float: left; margin-top: 70px;">
                 <a href="#/menu">
-                    <img src="img/back.png" height="100" width="100" />
+                    <img src="img/back.png" height="90" width="90" />
                 </a>
             </section>
             <section class="ordering" style="width: 85%; float: left; margin-top: 25px;">
                 <h1>Hot Dogs</h1>
             </section>
         </div>
-        <div style="margin-top: 400px" ng-controller="ModalDemoCtrl">
+        <div style="margin-top: 200px" ng-controller="ModalDemoCtrl">
             <script type="text/ng-template" id="nutrition.html">
                 <div class="modal-header">
                     <h3 class="modal-title">Nutrition Info</h3>
@@ -29,9 +29,10 @@
                     <button class="btn btn-primary" ng-click="ok()">OK</button>
                 </div>
             </script>
-            <button ng-click="open('sm', 'nutrition.html')">Nutrition</button>
+            <img height="400" width="400" src="../img/hotdog.jpg" />
+            <button style="float: right" class="btn btn-primary" ng-click="open('sm', 'nutrition.html')">Nutrition</button>
         </div>
-        <div style="margin-top: 500px">
+        <div style="margin-top: 100px">
             <h4>Pay for your order when it is delivered to you, or when you pick it up!</h4>
         </div>
     </section>
