@@ -1,99 +1,47 @@
-﻿<div ng-controller="ToDoCtrl" style="height: 500px; margin-top: 135px; background: white">
+﻿<link href="../css/stc.css" rel="stylesheet" />
+<div ng-controller="ToDoCtrl" style="height: 500px; margin-top: 135px; background: white">
     <div class="panel">
-        <a href="#/hotdog">
-            <div style="width: 550px; float: left; background: lightgray; border-radius: 10px; margin-top: 50px; margin-right: 10px; ">
-
-                <h1 style="font-size: 22pt; color: white; background: #003366; border-radius: 10px; padding-left: 20px; padding-bottom: 5px; margin-top: 0px; align-self: center; font-family: 'Segoe UI Light';">Hot Dogs</h1>
-                <img style="margin: 10px;" src="/img/hotdog.jpg" />
-            </div>
-        </a>
-
-        <a href="#/beverages">
-            <div style="width: 550px; float: left; background: lightgray; border-radius: 10px; margin-top: 50px;">
-                <h1 style="font-size: 22pt; color: white; background: #003366; border-radius: 10px; padding-bottom: 5px; padding-left: 20px; margin-top: 0px; align-self: center; font-family: 'Segoe UI Light';">Beverages</h1>
-                <img style="margin: 10px;" src="/img/hotdog.jpg" />
-            </div>
-        </a>
-    </div>
-    <div>
-        <a href="#/menu" ng-click="nachos('sm')">
-            <script type="text/ng-template" id="nachos.html">
-                <div class="modal-header">
-                    <h3 class="modal-title">Sold Out!</h3>
+        <section style="width: 49%; float: left;">
+            <a href="#/hotdog">
+                <div class="menuitem">
+                    <h1>Hot Dogs</h1>
+                    <img style="margin: 10px;" src="/img/hotdog.jpg" />
                 </div>
-                <div class="modal-body">
-                    <ul>
-                        <li>Sorry, we are out of nachos!</li>
-                        <br />
-                        <li>We still have plenty of hot dogs and drinks!!</li>
-                    </ul>
+            </a>
+        </section>
+        <section style="width: 49%; float: right;">
+            <a href="#/beverages">
+                <div class="menuitem">
+                    <h1>Beverages</h1>
+                    <img style="margin: 10px;" src="/img/hotdog.jpg" />
                 </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" ng-click="ok()">OK</button>
-                </div>
-            </script>
-            <script type="text/javascript" ng-controller="ToDoCtrl">
-                var ModalNachos = function ($scope, $modal, $log) {
-
-                    $scope.items = ['item1', 'item2', 'item3'];
-
-                    $scope.nachos = function (size) {
-
-                        var modalInstance = $modal.open({
-                            templateUrl: 'nachos.html',
-                            controller: ModalNachosInstanceCtrl,
-                            size: size,
-                            resolve: {
-                                items: function () {
-                                    return $scope.items;
-                                }
-                            }
-                        });
-
-                        modalInstance.result.then(function (selectedItem) {
-                            $scope.selected = selectedItem;
-                        }, function () {
-                            $log.info('Modal dismissed at: ' + new Date());
-                        });
-                    };
-                };
-
-                // Please note that $modalInstance represents a modal window (instance) dependency.
-                // It is not the same as the $modal service used above.
-
-                var ModalNachosInstanceCtrl = function ($scope, $modalInstance, items) {
-
-                    $scope.items = items;
-                    $scope.selected = {
-                        item: $scope.items[0]
-                    };
-
-                    $scope.ok = function () {
-                        $modalInstance.close($scope.selected.item);
-                    };
-
-                    $scope.cancel = function () {
-                        $modalInstance.dismiss('cancel');
-                    };
-                };
-            </script>
-
-            <div style="width: 363px; float: left; background: lightgray; border-radius: 10px; margin-top: 50px; margin-right: 10px">
-                <h1 style="font-size: 22pt; color: white; background: #003366; border-radius: 10px; padding-left: 20px; margin-top: 0px; align-self: center; font-family: 'Segoe UI Light';">Nachos</h1>
-                <img style="margin: 10px;" src="/img/hotdog.jpg" />
-            </div>
-        </a>
-        <a href="#/pretzels">
-            <div style="width: 363px; float: left; background: lightgray; border-radius: 10px; margin-top: 50px; margin-right: 10px">
-                <h1 style="font-size: 22pt; color: white; background: #003366; border-radius: 10px; padding-left: 20px; margin-top: 0px; align-self: center; font-family: 'Segoe UI Light';">Pretzels</h1>
-                <img style="margin: 10px;" src="/img/hotdog.jpg" />
-            </div>
-        </a>
-        <a href="#/instantbeer">
-            <div style="width: 363px; float: left; background: lightgray; border-radius: 10px; margin-top: 50px;">
-                <h1 style="font-size: 22pt; color: white; background: #003366; border-radius: 10px; padding-left: 20px; margin-top: 0px; align-self: center; font-family: 'Segoe UI Light';">Instant Beer</h1>
-                <img style="margin: 10px;" src="/img/hotdog.jpg" />
-            </div>
-        </a>
+            </a>
+        </section>
+        <div>
+            <section style="width: 32%; float: left; margin: 0 1%">
+                <a href="#/menu">
+                    <div class="menuitem">
+                        <h1>Nachos</h1>
+                        <img style="margin: 10px;" src="/img/hotdog.jpg" />
+                    </div>
+                </a>
+            </section>
+            <section style="width: 32%; float: left; margin: 0 1%">
+                <a href="#/pretzels">
+                    <div class="menuitem">
+                        <h1>Pretzels</h1>
+                        <img style="margin: 10px;" src="/img/hotdog.jpg" />
+                    </div>
+                </a>
+            </section>
+            <section style="width: 32%; float: left; margin: 0 1%">
+                <a href="#/instantbeer">
+                    <div class="menuitem">
+                        <h1>Instant Beer</h1>
+                        <img style="margin: 10px;" src="/img/hotdog.jpg" />
+                    </div>
+                </a>
+            </section>
+        </div>
     </div>
 </div>

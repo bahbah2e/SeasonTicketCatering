@@ -1,0 +1,17 @@
+﻿.menuitem {
+    background: lightgray; 
+    border-radius: 10px; 
+    margin-top: 50px;
+}
+
+.menuitem h1 {
+    font-size: 22pt;
+    color: white;
+    background: #003366;
+    border-radius: 10px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    margin-top: 0px;
+    align-self: center;
+    font-family: 'Segoe UI Light';
+}
