@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="controller\assistance.js" />
+    <Content Include="img\back.png" />
     <Content Include="img\hotdog.jpg" />
     <Content Include="js\angular-route.js" />
     <Content Include="js\ui-bootstrap-tpls-0.11.0.min.js" />
@@ -76,6 +77,7 @@
     <Content Include="index.html" />
     <Content Include="js\angular.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="svg\leftarrow.svg" />
     <Content Include="views\menu.html" />
     <Content Include="views\order.html" />
     <Content Include="views\OrderBeverages.html" />
@@ -93,7 +95,6 @@
     <Folder Include="fonts\" />
     <Folder Include="model\" />
     <Folder Include="service\" />
-    <Folder Include="svg\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
