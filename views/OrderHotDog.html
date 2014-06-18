@@ -1,17 +1,39 @@
-﻿<div class="panel" ng-controller="ToDoCtrl" style="margin-top: 135px; background: white">
-    <div style="width: 70%; float: left; height: 500px; border-radius: 25px; margin-top: 50px;">
+﻿<link href="../css/stc.css" rel="stylesheet" />
+<script src="../controller/assistance.js"></script>
+<div ng-controller="ToDoCtrl" style="margin-top: 135px; background: white">
+
+    <section style="width: 60%; background: yellow; float: left;">
         <div>
-            <div style="width: 15%; float:left;">
+            <section style="width: 15%; float: left; margin-top: 70px;">
                 <a href="#/menu">
                     <img src="img/back.png" height="100" width="100" />
                 </a>
-            </div>
-            <div>
-                <h1 style="font-size: 78pt; border-radius: 25px; padding-left: 20px; margin-top: 0px; align-self: center; font-family: 'Segoe UI Light';">Hot Dog</h1>
-            </div>
+            </section>
+            <section class="ordering" style="width: 85%; float: left; margin-top: 25px;">
+                <h1>Hot Dogs</h1>
+            </section>
         </div>
-
-    </div>
-    <div style="width: 30%; float: right; margin-top: 50px; border-radius: 25px;">
-    </div>
+        <div style="margin-top: 400px" ng-controller="ModalDemoCtrl">
+            <script type="text/ng-template" id="nutrition.html">
+                <div class="modal-header">
+                    <h3 class="modal-title">Nutrition Info</h3>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>Oh boy, this is bad for you.</li>
+                        <br />
+                        <li>Probably want to order a lite beer with this.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" ng-click="ok()">OK</button>
+                </div>
+            </script>
+            <button ng-click="open('sm', 'nutrition.html')">Nutrition</button>
+        </div>
+        <div style="margin-top: 500px">
+            <h4>Pay for your order when it is delivered to you, or when you pick it up!</h4>
+        </div>
+    </section>
+    <section style="width: 40%; float: left; background: blue"><h1>no</h1></section>
 </div>

@@ -2,10 +2,10 @@
 
     $scope.items = ['item1', 'item2', 'item3'];
 
-    $scope.open = function (size) {
+    $scope.open = function (size, url) {
 
         var modalInstance = $modal.open({
-            templateUrl: 'assistance.html',
+            templateUrl: url,
             controller: ModalInstanceCtrl,
             size: size,
             resolve: {

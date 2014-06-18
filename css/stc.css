@@ -15,3 +15,9 @@
     align-self: center;
     font-family: 'Segoe UI Light';
 }
+
+.ordering h1 {
+    font-size: 78pt; 
+    padding-left: 20px; 
+    font-family: 'Segoe UI Light';
+}
