@@ -57,7 +57,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="controller\nachos.js" />
     <Content Include="controller\assistance.js" />
     <Content Include="img\hotdog.jpg" />
     <Content Include="js\angular-route.js" />
@@ -79,6 +78,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="views\menu.html" />
     <Content Include="views\order.html" />
+    <Content Include="views\OrderBeverages.html" />
     <Content Include="views\OrderHotDog.html" />
     <Content Include="views\other.html" />
     <Content Include="views\scoreboard.html" />
