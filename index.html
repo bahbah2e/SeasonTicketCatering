@@ -7,6 +7,8 @@
     <script src="js/angular.js"></script>
     <script src="js/ui-bootstrap-tpls-0.11.0.min.js"></script>
     <script src="js/angular-route.js"></script>
+    <script src="controller/assistance.js"></script>
+    <script src="js/nachos.js"></script>
     <script>
         var model = {
             user: "Adam"
@@ -21,6 +23,7 @@
                 .when('/menu', { templateUrl: '/views/menu.html' })
                 .when('/order', { templateUrl: '/views/order.html' })
                 .when('/map', { templateUrl: '/views/map.html' })
+                .when('/hotdog', {templateUrl: '/views/OrderHotDog.html'})
                 .when('/', { templateUrl: '/views/welcome.html' })
                 .otherwise({ redirectTo: '/views/welcome.html' });
         });
@@ -53,51 +56,6 @@
                 $scope.active = menu;
             }
         });
-
-        var ModalDemoCtrl = function ($scope, $modal, $log) {
-
-            $scope.items = ['item1', 'item2', 'item3'];
-
-            $scope.open = function (size) {
-
-                var modalInstance = $modal.open({
-                    templateUrl: 'assistance.html',
-                    controller: ModalInstanceCtrl,
-                    size: size,
-                    resolve: {
-                        items: function () {
-                            return $scope.items;
-                        }
-                    }
-                });
-
-                modalInstance.result.then(function (selectedItem) {
-                    $scope.selected = selectedItem;
-                }, function () {
-                    $log.info('Modal dismissed at: ' + new Date());
-                });
-            };
-        };
-
-        // Please note that $modalInstance represents a modal window (instance) dependency.
-        // It is not the same as the $modal service used above.
-
-        var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
-
-            $scope.items = items;
-            $scope.selected = {
-                item: $scope.items[0]
-            };
-
-            $scope.ok = function () {
-                $modalInstance.close($scope.selected.item);
-            };
-
-            $scope.cancel = function () {
-                $modalInstance.dismiss('cancel');
-            };
-        };
-
     </script>
 
     <script type="text/javascript">

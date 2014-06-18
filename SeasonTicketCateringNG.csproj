@@ -57,6 +57,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="controller\nachos.js" />
+    <Content Include="controller\assistance.js" />
+    <Content Include="img\hotdog.jpg" />
     <Content Include="js\angular-route.js" />
     <Content Include="js\ui-bootstrap-tpls-0.11.0.min.js" />
     <None Include="Properties\PublishProfiles\bahbah2e - FTP.pubxml" />
@@ -76,6 +79,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="views\menu.html" />
     <Content Include="views\order.html" />
+    <Content Include="views\OrderHotDog.html" />
     <Content Include="views\other.html" />
     <Content Include="views\scoreboard.html" />
     <Content Include="views\map.html" />
