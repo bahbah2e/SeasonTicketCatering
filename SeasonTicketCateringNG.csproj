@@ -62,6 +62,7 @@
     <Content Include="img\back.png" />
     <Content Include="img\beer.jpg" />
     <Content Include="img\hotdog.jpg" />
+    <Content Include="img\mustard.png" />
     <Content Include="img\nachos.jpg" />
     <Content Include="js\angular-route.js" />
     <Content Include="js\ui-bootstrap-tpls-0.11.0.min.js" />

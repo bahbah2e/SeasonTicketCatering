@@ -32,6 +32,14 @@
         todoApp.controller("ToDoCtrl", function ($scope) {
             $scope.todo = model;
             $scope.active = 'Welcome';
+            $scope.withRelish = false;
+            $scope.withKetchup = false;
+            $scope.withMustard = false;
+            $scope.withOnions = false;
+            $scope.ketchupLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+            $scope.mustardLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+            $scope.relishLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+            $scope.onionsLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
 
             $scope.incompleteCount = function () {
                 var count = 0;
@@ -55,6 +63,76 @@
 
             $scope.goMenu = function (menu) {
                 $scope.active = menu;
+            }
+
+            $scope.hasRelish = function () {
+                return $scope.withRelish;
+            }
+
+            $scope.hasKetchup = function () {
+                return $scope.withKetchup;
+            }
+
+            $scope.hasMustard = function () {
+                return $scope.withMustard;
+            }
+
+            $scope.hasOnions = function () {
+                return $scope.withOnions;
+            }
+
+            $scope.imageRelish = function () {
+                return $scope.hasRelish() ? "img/relish.png" : "img/relish_off.png";
+            }
+
+            $scope.imageKetchup = function () {
+                return $scope.hasKetchup() ? "img/ketchup.png" : "img/ketchup_off.png";
+            }
+
+            $scope.imageMustard = function () {
+                return $scope.hasMustard() ? "img/mustard.png" : "img/mustard_off.png";
+            }
+
+            $scope.imageOnions = function () {
+                return $scope.hasOnions() ? "img/onions.png" : "img/onions_off.png";
+            }
+            $scope.toggleRelish = function () {
+                $scope.withRelish = !$scope.withRelish;
+
+                if ($scope.hasRelish()) {
+                    $scope.relishLabelStyle = { 'color': 'black', 'text-align': 'center' };
+                } else {
+                    $scope.relishLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+                }
+            }
+
+            $scope.toggleKetchup = function () {
+                $scope.withKetchup = !$scope.withKetchup;
+
+                if ($scope.hasKetchup()) {
+                    $scope.ketchupLabelStyle = { 'color': 'black', 'text-align': 'center' };
+                } else {
+                    $scope.ketchupLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+                }
+            }
+            $scope.toggleMustard = function () {
+                $scope.withMustard = !$scope.withMustard;
+
+                if ($scope.hasMustard()) {
+                    $scope.mustardLabelStyle = { 'color': 'black', 'text-align': 'center' };
+                } else {
+                    $scope.mustardLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+                }
+            }
+
+            $scope.toggleOnions = function () {
+                $scope.withOnions = !$scope.withOnions;
+
+                if ($scope.hasOnions()) {
+                    $scope.onionsLabelStyle = { 'color': 'black', 'text-align': 'center' };
+                } else {
+                    $scope.onionsLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+                }
             }
         });
     </script>

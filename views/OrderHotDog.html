@@ -10,7 +10,7 @@
                 </a>
             </section>
             <section class="ordering" style="width: 85%; float: left; margin-top: 25px;">
-                <h1>Hot Dogs</h1>
+                <h1>Menu</h1>
             </section>
         </div>
         <div style="margin-top: 200px" ng-controller="ModalDemoCtrl">
@@ -29,12 +29,39 @@
                     <button class="btn btn-primary" ng-click="ok()">OK</button>
                 </div>
             </script>
-            <img height="400" width="400" src="../img/hotdog.jpg" />
-            <button style="float: right" class="btn btn-primary" ng-click="open('sm', 'nutrition.html')">Nutrition</button>
+            <img height="300" width="300" src="../img/hotdog.jpg" />
+            <button style="margin-right: 160px; float: right; margin-top: 300px" class="btn btn-primary btn-lg" ng-click="open('sm', 'nutrition.html')">Nutrition</button>
         </div>
-        <div style="margin-top: 100px">
+        <div style="margin-top: 70px">
             <h4>Pay for your order when it is delivered to you, or when you pick it up!</h4>
         </div>
     </section>
-    <section style="width: 40%; float: left; background: blue"><h1>no</h1></section>
+    <section style="width: 40%; float: left;">
+        <h4 style="margin-top: 100px">Select the condiments you would like...</h4>
+        <div style="margin-top: 40px">
+            <section style="float: left; width: 50%; margin:auto">
+                <img src="{{imageKetchup()}}" ng-click="toggleKetchup()" />
+                <h4 ng-style="ketchupLabelStyle">Ketchup</h4>
+            </section>
+            <section style="float: left; width: 50%; margin: auto">
+                <img src="{{imageMustard()}}" ng-click="toggleMustard()" />
+                <h4 ng-style="mustardLabelStyle">Mustard</h4>
+            </section>
+        </div>
+        <div style="margin-top: 50px">
+            <section style="float: left; width: 50%; margin:auto">
+                <img src="{{imageRelish()}}" ng-click="toggleRelish()" />
+                <h4 ng-style="relishLabelStyle">Relish</h4>
+            </section>
+            <section style="float: left; width: 50%; margin: auto">
+                <img src="{{imageOnions()}}" ng-click="toggleOnions()" />
+                <h4 ng-style="onionsLabelStyle">Onions</h4>
+            </section>
+        </div>
+        <div class="input-group">
+            <section><button>Less</button></section>
+            <section><input class="form-control" /></section>
+            <section><button>More</button></section>
+        </div>
+    </section>
 </div>
