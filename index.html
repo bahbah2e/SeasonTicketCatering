@@ -33,6 +33,16 @@
 
         todoApp.controller("ToDoCtrl", function ($scope) {
             $scope.order = model;
+
+            var items = localStorage.getItem('items');
+
+            if (!items) {
+                $scope.order.items = [];
+            }
+            else {
+                $scope.order.items = JSON.parse(items);
+            }
+
             $scope.active = 'Welcome';
             $scope.withRelish = false;
             $scope.withKetchup = false;
@@ -47,8 +57,9 @@
             $scope.onionsLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
             $scope.waterLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
             $scope.smallBeerLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
-            $scope.largeBeerLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+            $scope.largeBeerLabelStyle = { 'color': 'black', 'text-align': 'center' };
             $scope.qtyHotdog = 1;
+            $scope.qtyDrinks = 1;
 
             $scope.incompleteCount = function () {
                 var count = 0;
@@ -220,6 +231,21 @@
                 return "Qty: " + $scope.qtyHotdog;
             }
 
+            $scope.drinkCount = function () {
+                return "Qty: " + $scope.qtyDrinks;
+            }
+
+            $scope.lessDrinks = function () {
+                var drinks = $scope.qtyDrinks - 1;
+
+                if (drinks < 1) {
+                    $scope.qtyDrinks = 1;
+                }
+                else {
+                    $scope.qtyDrinks = drinks;
+                }
+            }
+
             $scope.lessHotdogs = function () {
                 var hotdogs = $scope.qtyHotdog - 1;
 
@@ -228,6 +254,17 @@
                 }
                 else {
                     $scope.qtyHotdog = hotdogs;
+                }
+            }
+
+            $scope.moreDrinks = function () {
+                var drinks = $scope.qtyDrinks + 1;
+
+                if (drinks < 1) {
+                    $scope.qtyDrinks = 1;
+                }
+                else {
+                    $scope.qtyDrinks = drinks;
                 }
             }
 
@@ -240,6 +277,27 @@
                 else {
                     $scope.qtyHotdog = hotdogs;
                 }
+            }
+
+            $scope.orderDrinks = function () {
+
+                var description = 'Water';
+
+                if ($scope.largeBeer) {
+                    description = 'Large Beer';
+                }
+                if ($scope.smallBeer) {
+                    description = 'Small Beer';
+                }
+
+                $scope.order.items.push({ 'description': description, 'qty': $scope.qtyDrinks });
+                localStorage.setItem('items', JSON.stringify($scope.order.items));
+            }
+
+            $scope.remove = function (item) {
+                var index = $scope.order.items.indexOf(item)
+                $scope.order.items.splice(index, 1);
+                localStorage.setItem('items', JSON.stringify($scope.order.items));
             }
         });
     </script>
