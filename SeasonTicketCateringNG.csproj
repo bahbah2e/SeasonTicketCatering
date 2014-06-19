@@ -62,8 +62,16 @@
     <Content Include="img\back.png" />
     <Content Include="img\beer.jpg" />
     <Content Include="img\hotdog.jpg" />
+    <Content Include="img\ketchup.png" />
+    <Content Include="img\ketchup_off.png" />
     <Content Include="img\mustard.png" />
+    <Content Include="img\mustard_off.png" />
     <Content Include="img\nachos.jpg" />
+    <Content Include="img\onions.png" />
+    <Content Include="img\onions_off.png" />
+    <Content Include="img\pretzel.jpg" />
+    <Content Include="img\relish.png" />
+    <Content Include="img\relish_off.png" />
     <Content Include="js\angular-route.js" />
     <Content Include="js\ui-bootstrap-tpls-0.11.0.min.js" />
     <None Include="Properties\PublishProfiles\bahbah2e - FTP.pubxml" />
