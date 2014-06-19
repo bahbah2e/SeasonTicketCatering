@@ -65,6 +65,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="img\back.png" />
     <Content Include="img\beer.jpg" />
+    <Content Include="img\beer_large.png" />
+    <Content Include="img\beer_small.png" />
     <Content Include="img\hotdog.jpg" />
     <Content Include="img\ketchup.png" />
     <Content Include="img\ketchup_off.png" />

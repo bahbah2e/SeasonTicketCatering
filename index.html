@@ -38,10 +38,16 @@
             $scope.withKetchup = false;
             $scope.withMustard = false;
             $scope.withOnions = false;
+            $scope.water = false;
+            $scope.smallBeer = false;
+            $scope.largeBeer = true;
             $scope.ketchupLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
             $scope.mustardLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
             $scope.relishLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
             $scope.onionsLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+            $scope.waterLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+            $scope.smallBeerLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+            $scope.largeBeerLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
             $scope.qtyHotdog = 1;
 
             $scope.incompleteCount = function () {
@@ -84,6 +90,30 @@
                 return $scope.withOnions;
             }
 
+            $scope.orderWater = function () {
+                return $scope.water;
+            }
+
+            $scope.orderSmallBeer = function () {
+                return $scope.smallBeer;
+            }
+
+            $scope.orderLargeBeer = function () {
+                return $scope.largeBeer;
+            }
+
+            $scope.imageWater = function () {
+                return $scope.orderWater() ? "img/water.png" : "img/water_off.png";
+            }
+
+            $scope.imageSmallBeer = function () {
+                return $scope.orderSmallBeer() ? "img/beer_small.png" : "img/beer_small_off.png";
+            }
+
+            $scope.imageLargeBeer = function () {
+                return $scope.orderLargeBeer() ? "img/beer_large.png" : "img/beer_large_off.png";
+            }
+
             $scope.imageRelish = function () {
                 return $scope.hasRelish() ? "img/relish.png" : "img/relish_off.png";
             }
@@ -99,6 +129,54 @@
             $scope.imageOnions = function () {
                 return $scope.hasOnions() ? "img/onions.png" : "img/onions_off.png";
             }
+
+            $scope.toggleWater = function () {
+
+                if ($scope.water)
+                {
+                    return;
+                }
+
+                $scope.water = true;
+                $scope.smallBeer = false;
+                $scope.largeBeer = false;
+
+                $scope.waterLabelStyle = { 'color': 'black', 'text-align': 'center' };
+                $scope.smallBeerLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+                $scope.largeBeerLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+            }
+
+            $scope.toggleSmallBeer = function () {
+
+                if ($scope.smallBeer) {
+                    return;
+                }
+
+                $scope.water = false;
+                $scope.smallBeer = true;
+                $scope.largeBeer = false;
+
+                $scope.waterLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+                $scope.smallBeerLabelStyle = { 'color': 'black', 'text-align': 'center' };
+                $scope.largeBeerLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+            }
+
+            $scope.toggleLargeBeer = function () {
+
+                if ($scope.largeBeer) {
+                    return;
+                }
+
+                $scope.water = false;
+                $scope.smallBeer = false;
+                $scope.largeBeer = true;
+
+                $scope.waterLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+                $scope.smallBeerLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+                $scope.largeBeerLabelStyle = { 'color': 'black', 'text-align': 'center' };
+
+            }
+
             $scope.toggleRelish = function () {
                 $scope.withRelish = !$scope.withRelish;
 
