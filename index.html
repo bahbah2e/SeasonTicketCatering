@@ -294,6 +294,29 @@
                 localStorage.setItem('items', JSON.stringify($scope.order.items));
             }
 
+            $scope.orderHotDog = function () {
+                var description = 'Hot Dog';
+
+                if ($scope.hasKetchup()) {
+                    description += ', Ketchup';
+                }
+
+                if ($scope.hasMustard()) {
+                    description += ', Mustard';
+                }
+
+                if ($scope.hasRelish()) {
+                    description += ', Relish';
+                }
+
+                if ($scope.hasOnions()) {
+                    description += ', Onions';
+                }
+
+                $scope.order.items.push({ 'description': description, 'qty': $scope.qtyHotdog });
+                localStorage.setItem('items', JSON.stringify($scope.order.items));
+            }
+
             $scope.remove = function (item) {
                 var index = $scope.order.items.indexOf(item)
                 $scope.order.items.splice(index, 1);
