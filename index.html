@@ -11,7 +11,9 @@
     <script src="controller/assistance.js"></script>
     <script>
         var model = {
-            user: "Adam"
+            user: "Adam",
+            items: [{ description: "Hot Dog - Ketchup, Mustard", qty: 2 },
+                { description: "Large Beer", qty: 2 }]
         };
 
         var todoApp = angular.module("todoApp", ['ui.bootstrap', 'ngRoute']);
@@ -30,7 +32,7 @@
         });
 
         todoApp.controller("ToDoCtrl", function ($scope) {
-            $scope.todo = model;
+            $scope.order = model;
             $scope.active = 'Welcome';
             $scope.withRelish = false;
             $scope.withKetchup = false;
@@ -40,6 +42,7 @@
             $scope.mustardLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
             $scope.relishLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
             $scope.onionsLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+            $scope.qtyHotdog = 1;
 
             $scope.incompleteCount = function () {
                 var count = 0;
@@ -132,6 +135,32 @@
                     $scope.onionsLabelStyle = { 'color': 'black', 'text-align': 'center' };
                 } else {
                     $scope.onionsLabelStyle = { 'color': 'lightgray', 'text-align': 'center' };
+                }
+            }
+
+            $scope.hotDogCount = function () {
+                return "Qty: " + $scope.qtyHotdog;
+            }
+
+            $scope.lessHotdogs = function () {
+                var hotdogs = $scope.qtyHotdog - 1;
+
+                if (hotdogs < 1) {
+                    $scope.qtyHotdog = 1;
+                }
+                else {
+                    $scope.qtyHotdog = hotdogs;
+                }
+            }
+
+            $scope.moreHotdogs = function () {
+                var hotdogs = $scope.qtyHotdog + 1;
+
+                if (hotdogs < 1) {
+                    $scope.qtyHotdog = 1;
+                }
+                else {
+                    $scope.qtyHotdog = hotdogs;
                 }
             }
         });
