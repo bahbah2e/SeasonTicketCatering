@@ -37,7 +37,7 @@
         </div>
     </section>
     <section style="width: 40%; float: left;">
-        <h4 style="margin-top: 100px">Select the condiments you would like...</h4>
+        <h4 style="margin-top: 50px">Select the condiments you would like...</h4>
         <div style="margin-top: 40px">
             <section style="float: left; width: 50%; margin:auto">
                 <img src="{{imageKetchup()}}" ng-click="toggleKetchup()" />
@@ -59,9 +59,9 @@
             </section>
         </div>
         <div class="input-group">
-            <section><button>Less</button></section>
-            <section><input class="form-control" /></section>
-            <section><button>More</button></section>
+            <section style="float: left"><button class="glyphicon glyphicon-chevron-down" style="height: 50px; width: 80px" ng-click="lessHotdogs()"></button></section>
+            <section style="float: left"><div style="height:50px; width: 120px; border-color: slategray; border-style: solid"><h2 style="margin-top: 5px; text-align: center">{{hotDogCount()}}</h2></div></section>
+            <section style="float: left"><button class="glyphicon glyphicon-chevron-up" style="height: 50px; width: 80px" ng-click="moreHotdogs()"></button></section>
         </div>
     </section>
 </div>
