@@ -97,6 +97,7 @@
     <Content Include="js\angular.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="svg\leftarrow.svg" />
+    <Content Include="views\instantbeer.html" />
     <Content Include="views\menu.html" />
     <Content Include="views\order.html" />
     <Content Include="views\OrderBeverages.html" />
