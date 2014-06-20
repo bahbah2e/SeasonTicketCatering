@@ -38,7 +38,22 @@
             
         </section>
         <section style="width: 49%; float: right;">
-            
+            <script type="text/ng-template" id="orderaccepted.html">
+                <div class="modal-header">
+                    <h3 class="modal-title">Order Placed</h3>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>Your order is on its way!</li>
+                        <br />
+                        <li>Please enjoy your time with us.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" ng-click="ok()">OK</button>
+                </div>
+            </script>
+            <a href="#/order"><button ng-disabled="orderEmpty()" ng-controller="ToDoCtrl" style="float: left; margin-top: 80px; margin-right: 10px; " class="btn btn-primary btn-lg" ng-click="placeOrder();">Place My Order</button></a>
         </section>
     </div>
 </div>

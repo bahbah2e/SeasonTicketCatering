@@ -365,6 +365,10 @@
                 return total;
             }
 
+            $scope.orderEmpty = function () {
+                return $scope.orderTotal() == 0;
+            }
+
             $scope.delivery = function () {
                 var total = 0;
 
@@ -389,6 +393,14 @@
 
                 return '$' + total + '.00';
             }
+
+            $scope.placeOrder = function () {
+                angular.forEach($scope.order.items, function (item, index) {
+                    $scope.remove(item);
+                });
+            };
+
+            
         });
     </script>
 
