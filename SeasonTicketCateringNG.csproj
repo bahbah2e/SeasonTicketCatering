@@ -78,6 +78,7 @@
     <Content Include="img\pretzel.jpg" />
     <Content Include="img\relish.png" />
     <Content Include="img\relish_off.png" />
+    <Content Include="img\venue.png" />
     <Content Include="js\angular-route.js" />
     <Content Include="js\ui-bootstrap-tpls-0.11.0.min.js" />
     <None Include="Properties\PublishProfiles\bahbah2e - FTP.pubxml" />
