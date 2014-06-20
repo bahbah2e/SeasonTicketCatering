@@ -37,8 +37,8 @@
                 <img src="{{imageLargeBeer()}}" ng-click="toggleLargeBeer()" />
                 <h4 ng-style="largeBeerLabelStyle">Large Beer (20 oz.)</h4>
             </section>
-            </div>
-            <button style="margin-right: 160px; float: right;" class="btn btn-primary btn-lg" ng-click="open('sm', 'nutrition.html')">Nutrition</button>
+        </div>
+
         </div>
         <br />
         <div style="margin-top: 70px">
@@ -46,11 +46,19 @@
         </div>
     </section>
     <section style="width: 40%; float: left;">
-               
+
         <div style="margin-top: 153px;" class="input-group">
-            <section style="float: left"><button class="glyphicon glyphicon-chevron-down" style="height: 50px; width: 80px" ng-click="lessDrinks()"></button></section>
-            <section style="float: left"><div style="height:50px; width: 120px; border-color: slategray; border-style: solid"><h2 style="margin-top: 5px; text-align: center">{{drinkCount()}}</h2></div></section>
-            <section style="float: left"><button class="glyphicon glyphicon-chevron-up" style="height: 50px; width: 80px" ng-click="moreDrinks()"></button></section>
+            <section style="float: left">
+                <button class="glyphicon glyphicon-chevron-down" style="height: 50px; width: 80px" ng-click="lessDrinks()"></button>
+            </section>
+            <section style="float: left">
+                <div style="height: 50px; width: 120px; border-color: slategray; border-style: solid">
+                    <h2 style="margin-top: 5px; text-align: center">{{drinkCount()}}</h2>
+                </div>
+            </section>
+            <section style="float: left">
+                <button class="glyphicon glyphicon-chevron-up" style="height: 50px; width: 80px" ng-click="moreDrinks()"></button>
+            </section>
         </div>
         <button style="margin-right: 160px; float: right; margin-top: 10px" class="btn btn-primary btn-lg" ng-click="open('sm', 'nutrition.html')">Nutrition</button>
         <button style="margin-right: 160px; float: right; margin-top: 10px" class="btn btn-primary btn-lg" ng-click="orderDrinks()">Add to Order</button>

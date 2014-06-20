@@ -333,6 +333,10 @@
                     total += (item.cost * item.qty);
                 });
 
+                if (total == 0) {
+                    return 0;
+                }
+
                 if ($scope.delivery()) {
                     total += 5;
                 }
@@ -341,7 +345,28 @@
             }
 
             $scope.delivery = function () {
+                var total = 0;
+
+                angular.forEach($scope.order.items, function (item, index) {
+                    total += (item.cost * item.qty);
+                });
+
+                if (total == 0) {
+                    return false;
+                }
+
                 return true;
+            }
+
+            $scope.orderNote = function () {
+
+                var total = $scope.orderTotal();
+
+                if (total == 0) {
+                    return 'Check the menu to start an order.';
+                }
+
+                return '$' + total + '.00';
             }
         });
     </script>
@@ -409,7 +434,7 @@
                         <li ng-class="{active: isActive('Order')}">
                             <a href="#/order" ng-click="goMenu('Order')" style="width: 190px; height: 153px;">
                                 <h2 align="center">Order Review</h2>
-                                <div align="center">Check the menu to<br/>start an order.</div>
+                                <div align="center">{{orderNote()}}</div>
                             </a>
                         </li>
                         <li ng-class="{active: isActive('Map')}">
