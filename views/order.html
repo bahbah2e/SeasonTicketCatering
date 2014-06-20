@@ -10,13 +10,27 @@
                             <tr>
                                 <th>Description</th>
                                 <th>Qty</th>
+                                <th>Cost</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="item in order.items">
                                 <td>{{item.description}}</td>
                                 <td>{{item.qty}}</td>
+                                <td>${{item.qty*item.cost}}.00</td>
                                 <td><button class="glyphicon glyphicon-remove" ng-click="remove(item)"></button></td>
+                            </tr>
+                            <tr ng-hide="!delivery()">
+                                <td><b>Delivery Charge</b></td>
+                                <td></td>
+                                <td><b>$5.00</b></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><b>Total</b></td>
+                                <td></td>
+                                <td><b>${{orderTotal()}}.00</b></td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>

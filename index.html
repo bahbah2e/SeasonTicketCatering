@@ -282,15 +282,17 @@
             $scope.orderDrinks = function () {
 
                 var description = 'Water';
+                var cost = 5;
 
                 if ($scope.largeBeer) {
                     description = 'Large Beer';
+                    cost = 7;
                 }
                 if ($scope.smallBeer) {
                     description = 'Small Beer';
                 }
 
-                $scope.order.items.push({ 'description': description, 'qty': $scope.qtyDrinks });
+                $scope.order.items.push({ 'description': description, 'qty': $scope.qtyDrinks, 'cost':cost });
                 localStorage.setItem('items', JSON.stringify($scope.order.items));
             }
 
@@ -313,7 +315,7 @@
                     description += ', Onions';
                 }
 
-                $scope.order.items.push({ 'description': description, 'qty': $scope.qtyHotdog });
+                $scope.order.items.push({ 'description': description, 'qty': $scope.qtyHotdog, 'cost':7 });
                 localStorage.setItem('items', JSON.stringify($scope.order.items));
             }
 
@@ -321,6 +323,24 @@
                 var index = $scope.order.items.indexOf(item)
                 $scope.order.items.splice(index, 1);
                 localStorage.setItem('items', JSON.stringify($scope.order.items));
+            }
+
+            $scope.orderTotal = function () {
+                var total = 0;
+
+                angular.forEach($scope.order.items, function (item, index) {
+                    total += (item.cost * item.qty);
+                });
+
+                if ($scope.delivery()) {
+                    total += 5;
+                }
+
+                return total;
+            }
+
+            $scope.delivery = function () {
+                return true;
             }
         });
     </script>
