@@ -61,6 +61,7 @@
             $scope.largeBeerLabelStyle = { 'color': 'black', 'text-align': 'center' };
             $scope.qtyHotdog = 1;
             $scope.qtyDrinks = 1;
+            $scope.labelInstantBeer = 'Delivered to your seat.';
 
             $scope.incompleteCount = function () {
                 var count = 0;
@@ -277,6 +278,20 @@
                 }
                 else {
                     $scope.qtyHotdog = hotdogs;
+                }
+            }
+
+            $scope.descriptionInstantBeer = function () {
+                return $scope.labelInstantBeer;
+            }
+
+            $scope.orderInstantBeer = function () {
+                if ($scope.largeBeer) {
+                    $scope.labelInstantBeer = 'Large Beer';
+                }
+
+                if ($scope.smallBeer) {
+                    $scope.labelInstantBeer = 'Small Beer';
                 }
             }
 
