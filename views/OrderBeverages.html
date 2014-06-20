@@ -10,7 +10,7 @@
                 </a>
             </section>
             <section class="ordering" style="width: 85%; float: left; margin-top: 25px;">
-                <h1>Menu</h1>
+                <a href="#/menu"><h1>Menu</h1></a>
             </section>
         </div>
         <div style="margin-top: 200px" ng-controller="ModalDemoCtrl">
@@ -43,7 +43,7 @@
                 <h4 ng-style="largeBeerLabelStyle">Large Beer (20 oz.)</h4>
             </section>
             </div>
-            <button style="margin-right: 160px; float: right;" class="btn btn-primary btn-lg" ng-click="open('sm', 'nutrition.html')">Nutrition</button>
+         
         </div>
         <br />
         <div style="margin-top: 70px">
@@ -57,7 +57,7 @@
             <section style="float: left"><div style="height:50px; width: 120px; border-color: slategray; border-style: solid"><h2 style="margin-top: 5px; text-align: center">{{drinkCount()}}</h2></div></section>
             <section style="float: left"><button class="glyphicon glyphicon-chevron-up" style="height: 50px; width: 80px" ng-click="moreDrinks()"></button></section>
         </div>
-        <button style="margin-right: 160px; float: right; margin-top: 10px" class="btn btn-primary btn-lg" ng-click="open('sm', 'nutrition.html')">Nutrition</button>
-        <button style="margin-right: 160px; float: right; margin-top: 10px" class="btn btn-primary btn-lg" ng-click="orderDrinks()">Add to Order</button>
+        <a href="#/order"><button style="float: left; margin-top: 10px; margin-right: 10px; " class="btn btn-primary btn-lg" ng-click="orderDrinks()">Add to Order</button></a>
+        <button ng-controller="ModalDemoCtrl" style="margin-top: 10px; float: left; " class="btn btn-primary btn-lg" ng-click="open('sm', 'nutrition.html')">Nutrition</button>
     </section>
 </div>

@@ -297,7 +297,7 @@
                 localStorage.setItem('items', JSON.stringify($scope.order.items));
             }
 
-            $scope.orderHotDog = function () {
+            $scope.hotDogDescription = function () {
                 var description = 'Hot Dog';
 
                 if ($scope.hasKetchup()) {
@@ -316,8 +316,14 @@
                     description += ', Onions';
                 }
 
+                return description;
+            }
+
+            $scope.orderHotDog = function () {
+                var description = $scope.hotDogDescription();
                 $scope.order.items.push({ 'description': description, 'qty': $scope.qtyHotdog, 'cost':7 });
                 localStorage.setItem('items', JSON.stringify($scope.order.items));
+                $scope.goMenu('Order');
             }
 
             $scope.remove = function (item) {

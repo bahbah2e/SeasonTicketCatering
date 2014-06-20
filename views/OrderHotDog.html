@@ -10,7 +10,7 @@
                 </a>
             </section>
             <section class="ordering" style="width: 85%; float: left; margin-top: 25px;">
-                <h1>Menu</h1>
+                <a href="#/menu"><h1>Menu</h1></a>
             </section>
         </div>
         <div style="margin-top: 200px" ng-controller="ModalDemoCtrl">
@@ -30,8 +30,9 @@
                 </div>
             </script>
             <img height="300" width="300" src="../img/hotdog.jpg" />
-            <button style="margin-right: 160px; float: right; margin-top: 300px" class="btn btn-primary btn-lg" ng-click="open('sm', 'nutrition.html')">Nutrition</button>
+            
         </div>
+        <br />
         <div style="margin-top: 70px">
             <h4>Pay for your order when it is delivered to you, or when you pick it up!</h4>
         </div>
@@ -58,11 +59,13 @@
                 <h4 ng-style="onionsLabelStyle">Onions</h4>
             </section>
         </div>
-        <div class="input-group">
+        <div class="input-group" style="margin-top: 20px;">
             <section style="float: left"><button class="glyphicon glyphicon-chevron-down" style="height: 50px; width: 80px" ng-click="lessHotdogs()"></button></section>
             <section style="float: left"><div style="height:50px; width: 120px; border-color: slategray; border-style: solid"><h2 style="margin-top: 5px; text-align: center">{{hotDogCount()}}</h2></div></section>
             <section style="float: left"><button class="glyphicon glyphicon-chevron-up" style="height: 50px; width: 80px" ng-click="moreHotdogs()"></button></section>
         </div>
-        <button style="margin-top: 10px" class="btn btn-primary btn-lg" ng-click="orderHotDog()">Add to Order</button>
+        <div style="margin-top: 20px; margin-bottom: 20px;"><h4>{{hotDogDescription()}}</h4></div>
+        <a href="#/order"><button style="float: left; margin-top: 10px; margin-right: 10px; " class="btn btn-primary btn-lg" ng-click="orderHotDog()">Add to Order</button></a>
+        <button ng-controller="ModalDemoCtrl" style="margin-top: 10px; float: left; " class="btn btn-primary btn-lg" ng-click="open('sm', 'nutrition.html')">Nutrition</button>
     </section>
 </div>
