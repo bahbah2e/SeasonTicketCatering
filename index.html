@@ -44,7 +44,15 @@
                 $scope.order.items = JSON.parse(items);
             }
 
-            $scope.active = 'Welcome';
+            var active = localStorage.getItem('active');
+
+            if (!active) {
+                $scope.active = 'Welcome';
+            }
+            else {
+                $scope.active = active;
+            }
+
             $scope.withRelish = false;
             $scope.withKetchup = false;
             $scope.withMustard = false;
@@ -80,11 +88,13 @@
             }
 
             $scope.isActive = function (page) {
+                $scope.active = localStorage.getItem('active');
                 return page == $scope.active;
             }
 
             $scope.goMenu = function (menu) {
                 $scope.active = menu;
+                localStorage.setItem('active', $scope.active);
             }
 
             $scope.hasRelish = function () {
@@ -310,6 +320,7 @@
 
                 $scope.order.items.push({ 'description': description, 'qty': $scope.qtyDrinks, 'cost':cost });
                 localStorage.setItem('items', JSON.stringify($scope.order.items));
+                $scope.goMenu('Order');
             }
 
             $scope.hotDogDescription = function () {
