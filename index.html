@@ -35,15 +35,6 @@
         todoApp.controller("ToDoCtrl", function ($scope) {
             $scope.order = model;
 
-            var items = localStorage.getItem('items');
-
-            if (!items) {
-                $scope.order.items = [];
-            }
-            else {
-                $scope.order.items = JSON.parse(items);
-            }
-
             var active = localStorage.getItem('active');
 
             if (!active) {
@@ -70,6 +61,19 @@
             $scope.qtyHotdog = 1;
             $scope.qtyDrinks = 1;
             $scope.labelInstantBeer = 'Delivered to your seat.';
+
+            $scope.initOrderItems = function() {
+                var items = localStorage.getItem('items');
+
+                if (!items) {
+                    $scope.order.items = [];
+                }
+                else {
+                    $scope.order.items = JSON.parse(items);
+                }
+            }
+
+            $scope.initOrderItems();
 
             $scope.incompleteCount = function () {
                 var count = 0;
@@ -353,7 +357,7 @@
             }
 
             $scope.remove = function (item) {
-                var index = $scope.order.items.indexOf(item)
+                var index = $scope.order.items.indexOf(item);
                 $scope.order.items.splice(index, 1);
                 localStorage.setItem('items', JSON.stringify($scope.order.items));
             }
@@ -377,7 +381,8 @@
             }
 
             $scope.orderEmpty = function () {
-                return $scope.orderTotal() == 0;
+                var total = $scope.orderTotal();
+                return total == 0;
             }
 
             $scope.delivery = function () {
@@ -409,6 +414,10 @@
                 angular.forEach($scope.order.items, function (item, index) {
                     $scope.remove(item);
                 });
+
+                if (!$scope.orderEmpty()) {
+                    $scope.placeOrder();
+                }
             };
 
             
