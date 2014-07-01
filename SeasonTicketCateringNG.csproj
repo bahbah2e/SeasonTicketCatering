@@ -105,8 +105,10 @@
     <Content Include="views\menu.html" />
     <Content Include="views\order.html" />
     <Content Include="views\OrderBeverages.html" />
+    <Content Include="views\OrderConfirmation.html" />
     <Content Include="views\OrderHotDog.html" />
     <Content Include="views\other.html" />
+    <Content Include="views\RequestAssistance.html" />
     <Content Include="views\scoreboard.html" />
     <Content Include="views\map.html" />
     <Content Include="views\welcome.html" />
